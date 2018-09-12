@@ -19,8 +19,8 @@ public class Main {
 //            System.out.println("Element " + i + " typed value was " + myIntegers[i]);
 //        }
 //*******************CHALLENGE*******************
-        getIntegers(5) =
-
+        int[] array = getIntegers(5);
+//        sortDescending(array); // [8,9,5,2,4]
 
 
     }
@@ -45,10 +45,14 @@ public class Main {
         return (double) sum / (double) array.length;
     }
 
-    public static int[] sortDescending(int[] array){
-
+    public static int[] sortDescending(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > array[i + 1]) { // [8,9,5,2,4] -> [9,8,5,4,2]
+                array[i] = array[i + 1];
+            }
+        }
+        return array;
     }
-
 
 
     public static int[] getIntegers(int number) { // declaring a method which will return an ARRAY using NUMBER
